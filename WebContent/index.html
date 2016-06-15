@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="jqplot.json2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.jqplot.min.css" />
+<script>
+
+function getContacts() {
+
+     jQuery.ajax({
+         type: "GET",
+         url: "http://localhost:8080/hackday/rest/login/dologin?username=abc&password=xyz",
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+         success: function (data, status, jqXHR) {
+             // do something
+             alert(data.tag+"|"+data.status);
+         },
+
+         error: function (jqXHR, status) {
+             // error handler
+         }
+	});
+}     
+getContacts();
+
+$(document).ready(function(){
+	  // Our data renderer function, returns an array of the form:
+	  // [[[x1, sin(x1)], [x2, sin(x2)], ...]]
+	  var sineRenderer = function() {
+	    var data = [[]];
+	    for (var i=0; i<13; i+=0.5) {
+	      data[0].push([i, Math.sin(i)]);
+	    }
+	    return data;
+	  };
+	 
+	  // we have an empty data array here, but use the "dataRenderer"
+	  // option to tell the plot to get data from our renderer.
+	  var plot1 = $.jqplot('chart1',[],{
+	      title: 'Sine Data Renderer',
+	      dataRenderer: sineRenderer
+	  });
+	});
+</script>
+</head>
+<body>
+test ajax call.
+<div id="chart11"></div>
+</body>
+</html>
