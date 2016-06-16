@@ -10,7 +10,18 @@ import java.util.ArrayList;
 import com.sf.DBService;
 
 public class SpeedCaptureDAO {
-	private static String GET_SPEED_LOGS = "SELECT * FROM public.speedCapture where DeviceID=?";
+	private static String GET_SPEED_LOGS = 
+			
+			" SELECT " +
+			"  \"SpeedCapture\".\"Timestamp\", " + 
+			 " \"SpeedCapture\".\"Speed\"   " +
+			" FROM " +
+			"  public.\"SpeedCapture\"  " +
+			 "  where \"SpeedCapture\".\"DeviceID\" =?   " +
+			" order by \"SpeedCapture\".\"Timestamp\"  ";
+
+
+	
 	
 	private static String GET_SPEED_BY_RANGE = "SELECT * FROM public.speedCapture order by ";
 
@@ -33,10 +44,10 @@ public class SpeedCaptureDAO {
 			ResultSet rs = preparedStatement.executeQuery();
 			while (rs.next()) {
 				SpeedCaptureTO speedCaptureTO = new SpeedCaptureTO();
-				speedCaptureTO.setCaptureId(rs.getString("CaptureID"));
-				speedCaptureTO.setDeviceId(rs.getString("DeviceID"));
-				speedCaptureTO.setLatitude(rs.getString("Latitude"));
-				speedCaptureTO.setLongitude(rs.getString("Longitude"));
+				//speedCaptureTO.setCaptureId(rs.getString("CaptureID"));
+				//speedCaptureTO.setDeviceId(rs.getString("DeviceID"));
+				//speedCaptureTO.setLatitude(rs.getString("Latitude"));
+				//speedCaptureTO.setLongitude(rs.getString("Longitude"));
 				speedCaptureTO.setSpeed(rs.getInt("Speed"));
 				speedCaptureTO.setTimestamp(rs.getTimestamp("Timestamp"));
 				speedCaptureTOArray.add(speedCaptureTO);

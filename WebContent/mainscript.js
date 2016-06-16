@@ -8,7 +8,7 @@ function getIndividualLineChartData() {
 	
 	jQuery.ajax({
         type: "GET",
-        url: "http://localhost:8080/hackday/rest/speedCapture/doIndividualSpeedCapture",
+        url: "http://localhost:8080/hackday/rest/speedCapture/doIndividualSpeedCapture?deviceId=afdba0877d513bdc",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data, status, jqXHR) {
@@ -42,6 +42,8 @@ function getIndividualLineChartData() {
 		  	             
 		  	          },
 		  	          yaxis: {
+		  	        	min:0,
+		  	        	max:120,
 		  	            label: 'MPH',
 		  	            labelRenderer: $.jqplot.CanvasAxisLabelRenderer
 		  	          }

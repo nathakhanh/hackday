@@ -13,7 +13,7 @@ public class DBService {
 		Connection con = null;
 		try {
 			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/users", "postgres", "password");
+			con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SpeedCapture", "postgres", "password");
 		} catch (Exception e) {
 			throw e;
 		} finally {
