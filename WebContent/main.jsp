@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,10 +19,12 @@
 
 <div id="wrapper">
 <div id="charts">
-	<h3>Your Speed Vs. Time of Day</h3>
+	<h3>Driver's Speed Compilation</h3>
 	<div id="chart1"></div>
 	<br />
-    <h3>Driver Counts by Speed Range</h3>
+    <h3>Number of Drivers per Speed Range</h3>
+    Number of drivers: <span class="numOfDrivers"></span><br />
+    Location: <span class="location"></span>
     <div id="pie1"></div>
 </div>
 </div>

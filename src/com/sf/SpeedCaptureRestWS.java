@@ -58,26 +58,77 @@ public class SpeedCaptureRestWS {
 	return response;		
 	}
 	
-	public static String constructDriverCountJSON(String response) {
+	public static String constructIndividualJSON(String response) {
 	JSONObject obj = new JSONObject();
 	try {
 		obj.put("speed1", "45");
 		obj.put("speed2", "30");
 		obj.put("speed3", "65");
-		obj.put("speed4", "10");
+		obj.put("speed4", "70");
+		obj.put("speed5", "75");
+		obj.put("speed6", "85");
+		obj.put("speed7", "10");
+		obj.put("speed8", "23");
+		obj.put("speed9", "45");
+		obj.put("speed10", "90");
+		obj.put("speed11", "66");
+		obj.put("speed12", "55");
+		obj.put("speed13", "17");
+		obj.put("speed14", "20");
+		obj.put("speed15", "34");
+		obj.put("speed16", "66");
+		obj.put("speed17", "76");
+		obj.put("speed18", "23");
+		obj.put("speed19", "54");
+		obj.put("speed20", "56");		
+		obj.put("speed21", "34");		
+		obj.put("speed22", "38");		
+		obj.put("speed23", "77");		
+		obj.put("speed24", "88");	
+		
+		obj.put("speedLimit1", "45");
+		obj.put("speedLimit2", "45");
+		obj.put("speedLimit3", "45");
+		obj.put("speedLimit4", "65");
+		obj.put("speedLimit5", "65");
+		obj.put("speedLimit6", "65");
+		obj.put("speedLimit7", "25");
+		obj.put("speedLimit8", "25");
+		obj.put("speedLimit9", "45");
+		obj.put("speedLimit10", "65");
+		obj.put("speedLimit11", "65");
+		obj.put("speedLimit12", "45");
+		obj.put("speedLimit13", "35");
+		obj.put("speedLimit14", "35");
+		obj.put("speedLimit15", "35");
+		obj.put("speedLimit16", "65");
+		obj.put("speedLimit17", "65");
+		obj.put("speedLimit18", "35");
+		obj.put("speedLimit19", "45");
+		obj.put("speedLimit20", "45");		
+		obj.put("speedLimit21", "45");		
+		obj.put("speedLimit22", "45");		
+		obj.put("speedLimit23", "65");		
+		obj.put("speedLimit24", "65");
 
 	} catch (JSONException e) {
 	}
 	return obj.toString();
 }
 	
-	public static String constructIndividualJSON(String response) {
-	JSONObject obj = new JSONObject();
-	try {
-		obj.put("individualResponse", response);
+	public static String constructDriverCountJSON(String response) {
+		JSONObject obj = new JSONObject();
+		try {
+			
+			obj.put("speed1", "45");
+			obj.put("speed2", "30");
+			obj.put("speed3", "65");
+			obj.put("speed4", "10");
+			obj.put("numOfDrivers", "4300");
+			obj.put("location", "Dunwoody Area");
 
-	} catch (JSONException e) {
-	}
+		} catch (JSONException e) {
+		}
 	return obj.toString();
 }
 	

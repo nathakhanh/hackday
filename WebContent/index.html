@@ -13,12 +13,12 @@ function getContacts() {
 
      jQuery.ajax({
          type: "GET",
-         url: "http://localhost:8080/hackday/rest/login/dologin?username=abc&password=xyz",
+         url: "http://localhost:8080/hackday/rest/speedCapture/doDriverCountSpeed?TimeStamp=5:00PM_06_06_2016",
          contentType: "application/json; charset=utf-8",
          dataType: "json",
          success: function (data, status, jqXHR) {
              // do something
-             alert(data.tag+"|"+data.status);
+             alert(data.speed1+"|"+data.speed2+"|"+data.speed3+"|"+data.speed4);
          },
 
          error: function (jqXHR, status) {
@@ -41,11 +41,30 @@ $(document).ready(function(){
 	 
 	  // we have an empty data array here, but use the "dataRenderer"
 	  // option to tell the plot to get data from our renderer.
-	  var plot1 = $.jqplot('chart1',[],{
+	  var plot1 = $.jqplot('chart1',[data.speed1, data.speed2],{
 	      title: 'Sine Data Renderer',
 	      dataRenderer: sineRenderer
 	  });
 	});
+
+/* $(document).ready(function(){
+	  // Our data renderer function, returns an array of the form:
+	  // [[[x1, sin(x1)], [x2, sin(x2)], ...]]
+	  var sineRenderer = function() {
+	    var data = [[]];
+	    for (var i=0; i<13; i+=0.5) {
+	      data[0].push([i, Math.sin(i)]);
+	    }
+	    return data;
+	  };
+	 
+	  // we have an empty data array here, but use the "dataRenderer"
+	  // option to tell the plot to get data from our renderer.
+/* 	  var plot1 = $.jqplot('chart1',[],{
+	      title: 'Sine Data Renderer',
+	      dataRenderer: sineRenderer
+	  });
+	}); */
 </script>
 </head>
 <body>
